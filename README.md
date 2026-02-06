@@ -3,7 +3,9 @@
 A modern, minimal and creative developer portfolio built to showcase my work, skills and projects in an interactive way.
 Designed with performance, smooth transitions and clean UI in mind.
 
-**Live Website:** Click [here](https://personal-portfolio-psi-sooty.vercel.app/)
+<a href="https://personal-portfolio-psi-sooty.vercel.app/" target="_blank" rel="noreferrer">
+  🔗 Live Demo
+</a>
 
 ---
 
