@@ -82,12 +82,15 @@ const AboutPage = () => {
           <img src={astronaut} alt="spaceman" />
         </Spaceman>
         <Main>
-          I'm a front-end developer located in India. I love to create simple
-          yet beautiful websites with great user experience.
+          I’m a Computer Science graduate from India with a strong interest in
+          computer applications. I enjoy developing programs and turning
+          concepts into web experiences that are clear, efficient, and
+          user-focused.
           <br /> <br />
-          I'm interested in the whole frontend stack Like trying new things and
-          building great projects. I'm an independent freelancer and blogger. I
-          love to write blogs and read books.
+          My stack includes React, Node.js, and MongoDB, etc. and currently
+          diving deeper into Python. I’m actively looking for internship
+          opportunities where I can contribute, learn fast, and grow through
+          hands-on development.
           <br /> <br />I believe everything is an Art when you put your
           consciousness in it. You can connect with me via social links.
         </Main>
