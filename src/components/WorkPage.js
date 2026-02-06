@@ -12,7 +12,7 @@ import Card from "../subComponents/Card";
 import { Sudarshan, YinYang } from "./AllSvgs";
 import BigTitlte from "../subComponents/BigTitlte";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
 
   height: 400vh;
@@ -75,7 +75,12 @@ const WorkPage = () => {
 
   return (
     <ThemeProvider theme={DarkTheme}>
-      <Box>
+      <Box
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <LogoComponent theme="dark" />
         <SocialIcons theme="dark" />
         <PowerButton />
