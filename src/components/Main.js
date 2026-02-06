@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import LogoComponent from "../subComponents/LogoComponent";
 import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
-import { Sudarshan, YinYang } from "./AllSvgs";
+import { YinYang } from "./AllSvgs";
 import Intro from "./Intro";
 
 const MainContainer = styled.div`
