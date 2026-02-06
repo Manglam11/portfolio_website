@@ -2,6 +2,7 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme } from "./Themes";
 import { PythonIcon, Develope } from "./AllSvgs";
+import { motion } from "framer-motion";
 
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
@@ -9,7 +10,7 @@ import PowerButton from "../subComponents/PowerButton";
 import ParticleComponent from "../subComponents/ParticleComponent";
 import BigTitle from "../subComponents/BigTitlte";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -18,6 +19,20 @@ const Box = styled.div`
   justify-content: space-evenly;
   align-items: center;
 `;
+
+const pageAnimation = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
+  exit: {
+    opacity: 0,
+    y: -50,
+    transition: { duration: 0.4 },
+  },
+};
 
 const Main = styled.div`
   border: 2px solid ${(props) => props.theme.text};
@@ -80,7 +95,7 @@ const Description = styled.div`
 const MySkillsPage = () => {
   return (
     <ThemeProvider theme={lightTheme}>
-      <Box>
+      <Box variants={pageAnimation} initial="hidden" animate="show" exit="exit">
         <LogoComponent theme="light" />
         <SocialIcons theme="light" />
         <PowerButton />

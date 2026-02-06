@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import LogoComponent from "../subComponents/LogoComponent";
 import PowerButton from "../subComponents/PowerButton";
@@ -131,7 +131,6 @@ const DarkDiv = styled.div`
 
 const Main = () => {
   const [click, setClick] = useState(false);
-
   const handleClick = () => setClick(!click);
 
   return (
