@@ -22,9 +22,12 @@ const Container = styled.div`
   background-color: ${(props) => `rgba(${props.theme.bodyRgba},0.8)`};
   width: 100%;
   height: auto;
-
   position: relative;
-  padding-bottom: 5rem;
+  padding-bottom: 5rem; /* was just 5rem — keep it, ensure it's there */
+
+  @media (max-width: 768px) {
+    padding-bottom: 7rem; /* extra clearance for social pill */
+  }
 `;
 
 const Center = styled.div`
@@ -32,12 +35,22 @@ const Center = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 10rem;
+
+  @media (max-width: 768px) {
+    padding-top: 7rem;
+  }
 `;
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
   grid-gap: calc(1rem + 2vw);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+    width: 90vw;
+  }
 `;
 
 // Framer-motion config
