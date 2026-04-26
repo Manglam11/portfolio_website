@@ -1,111 +1,150 @@
-# 🌐 Personal Portfolio Website
+# Manglam Dubey — Developer Portfolio
 
-A modern, minimal and creative developer portfolio built to showcase my work, skills and projects in an interactive way.
-Designed with performance, smooth transitions and clean UI in mind.
+<div align="center">
 
-**Live Website:** Click [here](https://personal-portfolio-psi-sooty.vercel.app/)
+[![Vercel Deploy](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://your-portfolio.vercel.app)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react&logoColor=black)](https://reactjs.org)
+[![Styled Components](https://img.shields.io/badge/Styled--Components-DB7093?style=flat&logo=styled-components&logoColor=white)](https://styled-components.com)
+[![Framer Motion](https://img.shields.io/badge/Framer%20Motion-0055FF?style=flat&logo=framer&logoColor=white)](https://www.framer.com/motion)
 
----
+**A creative developer portfolio — built from scratch, fully responsive, animated.**
 
-## 🎬 Demo
+[🌐 Live Site](https://personal-portfolio-psi-sooty.vercel.app/) · [💼 Work](https://personal-portfolio-psi-sooty.vercel.app/work) · [📝 Blog](https://personal-portfolio-psi-sooty.vercel.app/blog)
 
-![Landing Demo](/src/assets/demo.gif)
-
----
-
-## 👨‍💻 About Me
-
-I’m a developer focused on building practical, real-world web applications and interactive experiences.
-This portfolio represents my work, approach to design, and how I combine logic with clean UI to create meaningful digital products.
+</div>
 
 ---
 
-## 🚀 Tech Stack
+## 🧠 About the Project
 
-- React
-- Styled Components
-- Framer Motion
-- React Router
-- EmailJS (contact form)
+This is my personal developer portfolio — designed and built entirely from scratch. Not a template, not a Wix site.
 
----
+The goal was to build something that reflects how I think as a developer: clean structure, purposeful animations, and a UI that feels alive without being noisy. Every page has its own personality while keeping a consistent design language throughout.
 
-## ✨ Features
+**What makes it stand out:**
 
-- Animated landing page
-- Smooth page transitions
-- Dark / Light theme
-- About section
-- Skills section
-- Work section
-- Blog/Post section
-- Custom SVG icons
-- Responsive layout
-- Clean minimal UI
+- 🎨 Particle background that reacts to the theme
+- 🌗 Light / Dark theming baked into every component
+- 🎞️ Page transitions and element-level animations via Framer Motion
+- 📱 Fully responsive — mobile, tablet, and desktop tested
+- 🔊 Interactive soundbar easter egg on the home page
 
 ---
 
-## 🛠️ Run Locally
+## 📄 Pages & Features
 
-Clone the project:
+| Page       | Route     | What's on it                                                             |
+| ---------- | --------- | ------------------------------------------------------------------------ |
+| **Home**   | `/`       | Animated landing with yin-yang, particle background, nav to all sections |
+| **About**  | `/about`  | Intro, spaceman illustration, staggered Framer Motion entrance animation |
+| **Skills** | `/skills` | Three cards — Python, Data Science, Web Dev — with hover invert effect   |
+| **Work**   | `/work`   | Horizontal scroll project showcase (touch/swipe on mobile)               |
+| **Blog**   | `/blog`   | LinkedIn post grid with tags, dates, and direct post links               |
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── components/          # Page-level components
+│   ├── AboutPage.js
+│   ├── AllSvgs.js       # All custom SVG icons
+│   ├── BlogComponent.js
+│   ├── Intro.js
+│   ├── Main.js          # Home / landing page
+│   ├── MySkillsPage.js
+│   ├── PostPage.js
+│   ├── Themes.js
+│   └── WorkPage.js
+├── subComponents/       # Reusable UI pieces
+│   ├── Anchor.js
+│   ├── BigTitlte.js
+│   ├── Card.js
+│   ├── LogoComponent.js
+│   ├── ParticleComponent.js
+│   ├── PowerButton.js
+│   ├── SocialIcons.js
+│   └── SoundBar.js
+├── data/                # Content data files
+│   ├── WorkData.js      # Projects list
+│   ├── PostData.js      # Blog/LinkedIn posts
+│   └── PostImg/         # Post thumbnail images
+├── styles/
+│   └── Responsive.js    # Breakpoints — single source of truth
+├── App.js               # Routing + AnimatePresence
+└── index.js
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer          | Technology                    |
+| -------------- | ----------------------------- |
+| **UI Library** | React 18                      |
+| **Styling**    | Styled Components (CSS-in-JS) |
+| **Animations** | Framer Motion                 |
+| **Particles**  | tsParticles                   |
+| **Icons**      | Custom SVGs via AllSvgs.js    |
+| **Routing**    | React Router v6               |
+| **Deployment** | Vercel                        |
+
+---
+
+## 🚀 Run Locally
+
+**1. Clone the repo**
 
 ```bash
 git clone https://github.com/Manglam11/portfolio_website.git
-```
-
-Go to project folder:
-
-```bash
 cd portfolio_website
 ```
 
-Install dependencies:
+**2. Install dependencies**
 
 ```bash
 npm install
 ```
 
-Start development server:
+**3. Start the dev server**
 
 ```bash
 npm start
 ```
 
----
-
-## 📦 Build for Production
-
-```bash
-npm run build
-```
+App runs at `http://localhost:3000`
 
 ---
 
-## 🚀 Deployment
+## 📱 Responsive Design
 
-This portfolio is optimized for deployment on **Vercel**.
+Responsiveness wasn't an afterthought — it was a full audit pass across every component.
 
-Steps:
+| Component      | Mobile Behaviour                                          |
+| -------------- | --------------------------------------------------------- |
+| `WorkPage`     | Native touch horizontal scroll with CSS snap              |
+| `MySkillsPage` | Cards stack vertically, full width                        |
+| `PostPage`     | 2-column grid collapses to single column                  |
+| `Intro`        | Side-by-side layout stacks vertically, image repositioned |
+| `BigTitle`     | Hidden on mobile to prevent overflow                      |
+| `SoundBar`     | Repositioned below logo to avoid overlap                  |
 
-1. Push code to GitHub
-2. Go to vercel.com
-3. Import repository
-4. Click deploy
-
-Your site will be live in minutes.
-
----
-
-## 📬 Contact
-
-If you’d like to connect, collaborate, or discuss opportunities:
-
-- [GitHub](https://github.com/Manglam11)
-- [Email](manglamdubey11@gmail.com)
-- [LinkedIn](https://www.linkedin.com/in/manglam-dubey/)
+Breakpoints are defined once in `src/styles/Responsive.js` and imported wherever needed — no magic numbers scattered across files.
 
 ---
 
-## ⭐ If you like this project
+## 👨‍💻 Author
 
-Give it a star on GitHub — it helps and motivates me to keep building.
+**Manglam Dubey** — CS Graduate | Full Stack + Data Science
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/manglam-dubey)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat&logo=github&logoColor=white)](https://github.com/Manglam11)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-000000?style=flat&logo=vercel&logoColor=white)](https://personal-portfolio-psi-sooty.vercel.app/)
+
+---
+
+<div align="center">
+  <sub>Code is craft. This is mine.
+</sub>
+</div>
