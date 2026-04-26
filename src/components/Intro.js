@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Me from "../assets/Images/profile-img.png";
+import { device } from "../styles/Responsive";
 
 const Box = styled(motion.div)`
   position: absolute;
@@ -9,9 +10,11 @@ const Box = styled(motion.div)`
   top: 50%;
   transform: translate(-50%, -50%);
 
-  width: 65vw;
-  height: 55vh;
+  width: 60vw;
+  height: 55dvh;
   display: flex;
+
+  /* NO overflow:hidden — image is designed to peek above the box */
 
   background:
     linear-gradient(
@@ -30,9 +33,19 @@ const Box = styled(motion.div)`
   background-size: 100% 2px;
   border-left: 2px solid ${(props) => props.theme.body};
   border-right: 2px solid ${(props) => props.theme.text};
-
   z-index: 1;
+
+  @media ${device.tablet} {
+    width: 80vw;
+  }
+
+  @media ${device.mobile} {
+    width: 92vw;
+    height: 60dvh;
+    /* keep side-by-side split — same as desktop intent */
+  }
 `;
+
 const SubBox = styled.div`
   width: 50%;
   position: relative;
@@ -42,9 +55,17 @@ const SubBox = styled.div`
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 14%);
+    transform: translateX(
+      -50%
+    ); /* removed the 14% Y push — that was forcing head out of frame */
     width: 80%;
     height: auto;
+  }
+
+  @media ${device.mobile} {
+    .pic {
+      width: 95%;
+    }
   }
 `;
 
@@ -63,13 +84,22 @@ const Text = styled.div`
     font-size: calc(0.5rem + 1.5vw);
     font-weight: 300;
   }
+
+  @media ${device.mobile} {
+    padding: 1.2rem;
+    font-size: calc(0.8em + 2vw);
+
+    & > *:last-child {
+      font-size: calc(0.4rem + 2vw);
+    }
+  }
 `;
 
 const Intro = () => {
   return (
     <Box
       initial={{ height: 0 }}
-      animate={{ height: "55vh" }}
+      animate={{ height: "55dvh" }}
       transition={{ type: "spring", duration: 2, delay: 1 }}
     >
       <SubBox>
@@ -81,6 +111,7 @@ const Intro = () => {
       </SubBox>
       <SubBox>
         <motion.div
+          style={{ width: "100%", position: "relative", height: "100%" }}
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 1, delay: 2 }}
