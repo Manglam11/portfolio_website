@@ -5,7 +5,7 @@ import { Github } from "../components/AllSvgs";
 
 const Box = styled(motion.li)`
   width: 16rem;
-  height: 40vh;
+  min-height: 40dvh;
   background-color: ${(props) => props.theme.text};
   color: ${(props) => props.theme.body};
   padding: 1.5rem 2rem;
@@ -16,11 +16,21 @@ const Box = styled(motion.li)`
   justify-content: space-between;
   border: 1px solid ${(props) => props.theme.body};
   transition: all 0.2s ease;
+  list-style: none;
 
   &:hover {
     background-color: ${(props) => props.theme.body};
     color: ${(props) => props.theme.text};
     border: 1px solid ${(props) => props.theme.text};
+  }
+
+  @media (max-width: 768px) {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 78vw;
+    margin-right: 1.2rem;
+    min-height: 55dvh;
+    border-radius: 0 30px 0 30px;
   }
 `;
 const Title = styled.h2`
