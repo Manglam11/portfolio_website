@@ -1,8 +1,9 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme } from "./Themes";
-import { PythonIcon, Develope } from "./AllSvgs";
+import { PythonIcon, Develope, DataScienceIcon } from "./AllSvgs";
 import { motion } from "framer-motion";
+import { device } from "../styles/Responsive";
 
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
@@ -13,25 +14,26 @@ import BigTitle from "../subComponents/BigTitlte";
 const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
-  height: 100vh;
+  min-height: 100dvh;
   position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  @media ${device.mobile} {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 6rem 0 8rem 0;
+    gap: 2rem;
+    overflow-y: auto;
+  }
 `;
 
 const pageAnimation = {
   hidden: { opacity: 0, y: 50 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-  exit: {
-    opacity: 0,
-    y: -50,
-    transition: { duration: 0.4 },
-  },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  exit: { opacity: 0, y: -50, transition: { duration: 0.4 } },
 };
 
 const Main = styled.div`
@@ -39,12 +41,11 @@ const Main = styled.div`
   color: ${(props) => props.theme.text};
   background-color: ${(props) => props.theme.body};
   padding: 2rem;
-  width: 30vw;
-  height: 60vh;
+  width: 25vw;
+  min-height: 60dvh;
   z-index: 3;
   line-height: 1.5;
   cursor: pointer;
-
   font-family: "Ubuntu Mono", monospace;
   display: flex;
   flex-direction: column;
@@ -53,6 +54,17 @@ const Main = styled.div`
   &:hover {
     color: ${(props) => props.theme.body};
     background-color: ${(props) => props.theme.text};
+  }
+
+  @media ${device.tablet} {
+    width: 38vw;
+    min-height: 50dvh;
+  }
+
+  @media ${device.mobile} {
+    width: 85vw;
+    min-height: auto;
+    padding: 1.5rem;
   }
 `;
 
@@ -90,6 +102,10 @@ const Description = styled.div`
   p {
     margin-left: 2rem;
   }
+
+  @media ${device.mobile} {
+    font-size: 0.95rem;
+  }
 `;
 
 const MySkillsPage = () => {
@@ -100,42 +116,66 @@ const MySkillsPage = () => {
         <SocialIcons theme="light" />
         <PowerButton />
         <ParticleComponent theme="light" />
+
         <Main>
           <Title>
             <PythonIcon width={40} height={40} /> Python Coder
           </Title>
-
           <Description>
-            I enjoy building logical, which demand structured thinking.
+            I enjoy building logical programs that demand structured thinking
+            and clean code.
           </Description>
-
           <Description>
             <strong>I like to build</strong>
             <ul>
+              <li>Automation Scripts</li>
               <li>Interactive Python Games</li>
               <li>Problem-Solving Projects</li>
             </ul>
           </Description>
           <Description>
             <strong>Tools</strong>
-            <p>Python, OOP, Js, Pandas, Numpy, PyCharm etc.</p>
+            <p>Python, OOP, Selenium, BeautifulSoup, PyCharm</p>
           </Description>
         </Main>
+
+        <Main>
+          <Title>
+            <DataScienceIcon width={40} height={40} /> Data Scientist
+          </Title>
+          <Description>
+            I love exploring data to find patterns, tell stories, and build
+            insight-driven pipelines.
+          </Description>
+          <Description>
+            <strong>I like to build</strong>
+            <ul>
+              <li>EDA Pipelines</li>
+              <li>Data Visualizations</li>
+              <li>Analytical Web Apps</li>
+            </ul>
+          </Description>
+          <Description>
+            <strong>Tools</strong>
+            <p>Pandas, NumPy, Matplotlib, Seaborn, Streamlit</p>
+          </Description>
+        </Main>
+
         <Main>
           <Title>
             <Develope width={40} height={40} /> Web Developer
           </Title>
           <Description>
-            I value business or brand for which i'm creating, thus i enjoy
-            bringing new ideas.
+            I value the brand I'm building for — so I bring clean UI, solid
+            logic, and fresh ideas.
           </Description>
           <Description>
             <strong>Skills</strong>
-            <p>Js, React, Tailwind, Firebase, Node</p>
+            <p>React, Tailwind, Node.js, MongoDB, Firebase</p>
           </Description>
           <Description>
             <strong>Tools</strong>
-            <p>VScode, Github, Postman etc.</p>
+            <p>VSCode, GitHub, Postman, Vercel</p>
           </Description>
         </Main>
 

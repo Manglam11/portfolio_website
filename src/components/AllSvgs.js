@@ -100,6 +100,22 @@ export const Instagram = (props) => {
   );
 };
 
+export const DataScienceIcon = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      {...props}
+    >
+      <path
+        fill={props.fill}
+        d="M4 48h8V28H4v20zm12 0h8V20h-8v28zm12 0h8V32h-8v16zm12 0h8V12h-8v36zm12 0h8V24h-8v24zM2 54h60v4H2z M18 8l10 6 10-8 10 6V4L38 0 28 8 18 2z"
+      />
+    </svg>
+  );
+};
+
 export const YouTube = (props) => {
   return (
     <svg
