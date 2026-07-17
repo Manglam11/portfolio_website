@@ -11,7 +11,7 @@ const Icons = styled.div`
   position: fixed;
   bottom: 0;
   left: 2rem;
-  z-index: 3;
+  z-index: 10;
 
   & > *:not(:last-child) {
     margin: 0.6rem 0;
