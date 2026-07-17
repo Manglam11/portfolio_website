@@ -19,12 +19,14 @@ const Box = styled(motion.div)`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding: 4rem 5rem; /* keep cards clear of the fixed logo / social / power controls */
 
-  @media ${device.mobile} {
+  /* stack into one column before three wide cards get squished into the corners */
+  @media (max-width: 1100px) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 6rem 0 8rem 0;
+    padding: 6rem 1.5rem 8rem 1.5rem;
     gap: 2rem;
     overflow-y: auto;
   }
@@ -119,63 +121,69 @@ const MySkillsPage = () => {
 
         <Main>
           <Title>
-            <PythonIcon width={40} height={40} /> Python Coder
+            <DataScienceIcon width={40} height={40} /> Data Science &amp; ML
           </Title>
           <Description>
-            I enjoy building logical programs that demand structured thinking
-            and clean code.
+            I turn messy, real-world data into forecasts and clear insight —
+            from feature engineering to deployed models.
           </Description>
           <Description>
             <strong>I like to build</strong>
             <ul>
-              <li>Automation Scripts</li>
-              <li>Interactive Python Games</li>
-              <li>Problem-Solving Projects</li>
+              <li>ML Forecasting Pipelines</li>
+              <li>LLM-Powered Data Apps</li>
+              <li>EDA &amp; Visualization Reports</li>
             </ul>
           </Description>
           <Description>
             <strong>Tools</strong>
-            <p>Python, OOP, Selenium, BeautifulSoup, PyCharm</p>
+            <p>
+              Python, Pandas, NumPy, scikit-learn, XGBoost, LightGBM, Streamlit
+            </p>
           </Description>
         </Main>
 
         <Main>
           <Title>
-            <DataScienceIcon width={40} height={40} /> Data Scientist
+            <PythonIcon width={40} height={40} /> Automation &amp; Scraping
           </Title>
           <Description>
-            I love exploring data to find patterns, tell stories, and build
-            insight-driven pipelines.
+            I build Python pipelines that collect, clean, and move data with
+            zero manual steps.
           </Description>
           <Description>
             <strong>I like to build</strong>
             <ul>
-              <li>EDA Pipelines</li>
-              <li>Data Visualizations</li>
-              <li>Analytical Web Apps</li>
+              <li>Web Scraping Pipelines</li>
+              <li>API Integrations</li>
+              <li>Scheduled Automation</li>
             </ul>
           </Description>
           <Description>
             <strong>Tools</strong>
-            <p>Pandas, NumPy, Matplotlib, Seaborn, Streamlit</p>
+            <p>
+              Python, Selenium, BeautifulSoup, Requests, Pandas, GitHub Actions
+            </p>
           </Description>
         </Main>
 
         <Main>
           <Title>
-            <Develope width={40} height={40} /> Web Developer
+            <Develope width={40} height={40} /> Backend &amp; Full-Stack
           </Title>
           <Description>
-            I value the brand I'm building for — so I bring clean UI, solid
-            logic, and fresh ideas.
+            I ship full-stack apps with clean architecture — real-time backends
+            and responsive UIs.
           </Description>
           <Description>
             <strong>Skills</strong>
-            <p>React, Tailwind, Node.js, MongoDB, Firebase</p>
+            <p>
+              Flask, REST APIs, PostgreSQL, MySQL, SQLAlchemy, WebSockets, React
+            </p>
           </Description>
           <Description>
             <strong>Tools</strong>
-            <p>VSCode, GitHub, Postman, Vercel</p>
+            <p>Git, GitHub, Postman, Docker, Vercel, Render</p>
           </Description>
         </Main>
 
